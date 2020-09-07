@@ -29,6 +29,15 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_swagger',
     'gateway',
+    'authentication',
+    'base',
+    'booth',
+    'census',
+    'mixnet',
+    'postproc',
+    'store',
+    'visualizer',
+    'voting',
 ]
 
 # Modules in use, commented modules that you won't use
