@@ -1,3 +1,18 @@
+import os
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '^##ydkswfu0+=ofw0l#$kv^8n)0$i(qd&d&ol#p9!b$8*5%j1+'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
 ALLOWED_HOSTS = ["*"]
 
 # Modules in use, commented modules that you won't use
@@ -29,10 +44,10 @@ APIS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD':'nopassword',
-        'HOST': 'localhost',
+        'NAME': 'decide',
+        'USER': 'decide',
+        'PASSWORD':'decide',
+        'HOST': 'db',
         'PORT': 5432,
     }
 }
