@@ -17,7 +17,7 @@ script:
 - python manage.py test census
 deploy:
   provider: heroku
-  app: "examen-egc-final-septiembre20"
+  app: examen-egc-final-septiembre20
   strategy: git
   api_key:
     secure: aTLgw52V0F6GQSjjqR/YOG0aF2cuBLzlXNb+eFcZJ4iah9R0qGOyGwzT6MofTNIJ27BqBoMYvjVO8M+djHvJuDuIKMzsKRCJZRZT8UyI1GQzE9uroSyeMLNEtAt5LK3f5Slv+M2HuU8yx8k9sNF7ZGj6Xrsrvsr0HsHA5DNVUhKTid3BemHjORPwdxZM1rM8iaWjcsa+ZWT/mEHciSXjGnPENjs4qKf4IWS20e/rlK5GS3jlo/UCEfvODexVIBMEQ+gvZA+HEiz2Tx7M4pkUfvBNcv0FDloPUmPLbPBRAGkDHoY3zSp+bswu3kFk8UjELmmrt+gJkFX8eIH+VYPs1FgQzUcGRmSpJ9iU//9UejO8pcllhw0C5BPOj1szFM0LobgSUIvIuOR5WsWv8IyTdOOyP7g9ZiZWArgRHM9T9MODdAFlmJ6ljGRr9+X2m2EIbvKuanT5vwBPKj3fleY4WyAq8iJprw2R7wONSYcDPk/9GP+swCn29yBKhdQAwiV+JxyRFC6qnBdV+7M2Uil4nlD0gjvayzhZsrGekYLc+4E3bHDhvi/eh2Oi9e1dwuBzJM95ccWyttiGzkJj2CLqiRqQiSIseMfBN+k7vrZKBbyF9sVymjl/oNzZRYVTnA4cVf3DA0kz78u3Fgu2Vp9nz23RG/HYQLTeySAAKqBrU6I=
