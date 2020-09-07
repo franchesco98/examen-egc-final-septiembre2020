@@ -15,6 +15,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    'corsheaders',
+    'django_filters',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_swagger',
+    'gateway',
+]
+
 # Modules in use, commented modules that you won't use
 MODULES = [
     'authentication',
