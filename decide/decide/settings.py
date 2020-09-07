@@ -44,6 +44,19 @@ MODULES = [
     'voting',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning'
+}
+
+AUTHENTICATION_BACKENDS = [
+    'base.backends.AuthBackend',
+]
+
+
 BASEURL = 'http://examen-egc-final-septiembre20.herokuapp.com'
 
 MIDDLEWARE = [
@@ -83,6 +96,8 @@ DATABASES = {
         },
     }
 }
+
+WSGI_APPLICATION = 'decide.wsgi.application'
 
 # number of bits for the key, all auths should use the same number of bits
 KEYBITS = 256
