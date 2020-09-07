@@ -49,6 +49,9 @@ DATABASES = {
         'PASSWORD':'decide',
         'HOST': 'localhost',
         'PORT': 5432,
+        'TEST': {
+            'NAME': 'test_decide_examen',
+        },
     }
 }
 
