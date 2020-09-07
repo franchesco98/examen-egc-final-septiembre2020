@@ -28,16 +28,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
-    'gateway',
-    'authentication',
-    'base',
-    'booth',
-    'census',
-    'mixnet',
-    'postproc',
-    'store',
-    'visualizer',
-    'voting',
+    'gateway'
 ]
 
 # Modules in use, commented modules that you won't use
@@ -52,7 +43,20 @@ MODULES = [
     'visualizer',
     'voting',
 ]
+
 BASEURL = 'http://examen-egc-final-septiembre20.herokuapp.com'
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'decide.urls'
 
 APIS = {
     'authentication': BASEURL,
@@ -82,3 +86,63 @@ DATABASES = {
 
 # number of bits for the key, all auths should use the same number of bits
 KEYBITS = 256
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+
+# Internationalization
+# https://docs.djangoproject.com/en/2.0/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.0/howto/static-files/
+
+STATIC_URL = '/static/'
+
+# number of bits for the key, all auths should use the same number of bits
+KEYBITS = 256
+
+# Versioning
+ALLOWED_VERSIONS = ['v1', 'v2']
+DEFAULT_VERSION = 'v1'
+
+try:
+    from local_settings import *
+except ImportError:
+    print("local_settings.py not found")
+
+# loading jsonnet config
+if os.path.exists("config.jsonnet"):
+    import json
+    from _jsonnet import evaluate_file
+    config = json.loads(evaluate_file("config.jsonnet"))
+    for k, v in config.items():
+        vars()[k] = v
+
+
+INSTALLED_APPS = INSTALLED_APPS + MODULES
